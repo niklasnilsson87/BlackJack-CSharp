@@ -21,5 +21,10 @@ namespace BlackJack.model.rules
     {
       return new Soft17HitStrategy();
     }
+
+    public IWinnerStrategy GetWinnerStrategy()
+    {
+      return new IsDealerWinnerStrategy();
+    }
   }
 }
