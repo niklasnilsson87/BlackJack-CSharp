@@ -18,7 +18,7 @@ namespace BlackJack.model
     {
       m_newGameRule = a_rulesFactory.GetNewGameRule();
       m_hitRule = a_rulesFactory.GetSoft17Rule();
-      m_winnerRule = a_rulesFactory.GetWinnerStrategy();
+      m_winnerRule = a_rulesFactory.GetPlayerWinnerStrategy();
     }
 
     public bool NewGame(Player a_player)
