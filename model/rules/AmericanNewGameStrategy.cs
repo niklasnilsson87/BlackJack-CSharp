@@ -9,23 +9,13 @@ namespace BlackJack.model.rules
   {
     public bool NewGame(Deck a_deck, Dealer a_dealer, Player a_player)
     {
-      Card c;
+      bool showCard = true;
+      bool hideCard = false;
 
-      c = a_deck.GetCard();
-      c.Show(true);
-      a_player.DealCard(c);
-
-      c = a_deck.GetCard();
-      c.Show(true);
-      a_dealer.DealCard(c);
-
-      c = a_deck.GetCard();
-      c.Show(true);
-      a_player.DealCard(c);
-
-      c = a_deck.GetCard();
-      c.Show(false);
-      a_dealer.DealCard(c);
+      a_dealer.Deal(a_player, showCard, a_deck.GetCard());
+      a_dealer.Deal(a_dealer, showCard, a_deck.GetCard());
+      a_dealer.Deal(a_player, showCard, a_deck.GetCard());
+      a_dealer.Deal(a_dealer, hideCard, a_deck.GetCard());
 
       return true;
     }
